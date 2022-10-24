@@ -80,6 +80,23 @@
 					</excludes>
 				</configuration>
 			</plugin>
+			<plugin>
+				<groupId>io.moderne</groupId>
+				<artifactId>moderne-maven-plugin</artifactId>
+				<version>0.29.0</version>
+				<configuration>
+					<!-- Supports all of the same functionality as the OpenRewrite plugin -->
+					<activeRecipes>
+						<recipe>org.openrewrite.java.cleanup.CommonStaticAnalysis</recipe>
+					</activeRecipes>
+				</configuration>
+				<executions>
+					<execution>
+						<phase>package</phase>
+						<goals><goal>ast</goal></goals>
+					</execution>
+				</executions>
+			</plugin>
 		</plugins>
 	</build>
 
